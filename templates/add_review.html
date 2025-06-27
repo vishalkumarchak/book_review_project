@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Add Review</h2>
+
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  
+  <textarea name="content" class="form-control mb-2" placeholder="Write your review..." required></textarea>
+  
+  <input type="number" name="rating" class="form-control mb-2" placeholder="Rating (1-5)" min="1" max="5" required>
+  
+  <label for="review_image" class="form-label">Upload Review Image (optional)</label>
+  <input type="file" name="review_image" class="form-control mb-3">
+  
+  <button class="btn btn-success">Submit</button>
+</form>
+
+{% endblock %}
